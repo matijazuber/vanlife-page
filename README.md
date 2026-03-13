@@ -1,16 +1,26 @@
-# React + Vite
+# VanLife – Rent the Perfect Van for Your Road Trip
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+VanLife is a React-based web application that helps adventurers find and rent the perfect van for their next road trip. Built with React Router, it provides a smooth navigation experience between pages and emphasizes a clean, modern UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Browse available vans with detailed descriptions
+- Navigate seamlessly using React Router
+- Responsive design for mobile and desktop
+- Styled components for a polished look
+- Footer and header for consistent branding
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React – component-based UI
+- React Router v6 – client-side routing
+- CSS – custom styling
+- JavaScript (ES6+)
+
+---
+
+## Project Structure
