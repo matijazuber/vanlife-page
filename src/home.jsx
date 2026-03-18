@@ -10,7 +10,7 @@ export default function Home() {
         <button className="button">Find your van</button>
       </main>
       <footer>
-        <p>Ⓒ 2022 #VANLIFE</p>
+        <p>Ⓒ 2026 #VANLIFE</p>
       </footer>
     </>
   );

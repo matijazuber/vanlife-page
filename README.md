@@ -22,5 +22,3 @@ VanLife is a React-based web application that helps adventurers find and rent th
 - JavaScript (ES6+)
 
 ---
-
-## Project Structure
