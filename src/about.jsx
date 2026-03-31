@@ -28,12 +28,14 @@ export default function About() {
           </p>
         </div>
       </section>
-      <section className="">
-        <h3>
-          Your destination is waiting.<br></br>Your van is ready
-        </h3>
-        <button>Explore our vans</button>
-      </section>
+      <div className="section3">
+        <div>
+          <h3>
+            Your destination is waiting.<br></br>Your van is ready
+          </h3>
+          <button>Explore our vans</button>
+        </div>
+      </div>
     </>
   );
 }
