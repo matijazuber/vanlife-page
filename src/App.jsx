@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import About from "./pages/about";
 import Home from "./pages/home";
 import Footer from "./footer";
+import Vans from "./pages/vans";
 
-import "./server";
+import "./server/server";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/vans" element={<Vans />} />
       </Routes>
       <Footer />
     </BrowserRouter>
