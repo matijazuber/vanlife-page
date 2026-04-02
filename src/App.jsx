@@ -3,6 +3,8 @@ import About from "./pages/about";
 import Home from "./pages/home";
 import Footer from "./footer";
 
+import "./server";
+
 function App() {
   return (
     <BrowserRouter>
