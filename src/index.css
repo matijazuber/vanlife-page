@@ -117,16 +117,23 @@ footer p {
   line-height: 30px;
   font-size: 24px;
   font-family: Inter;
+  height: 180px;
 }
 
-.section3 button {
+.section3 h3 {
+  margin-top: 5px;
+}
+
+.link-button {
   background-color: #161616;
   color: white;
+  margin-top: 0;
   border-radius: 10px;
   font-family: Inter;
   line-height: 24px;
   padding: 10px 50px;
   font-weight: 700;
   border: none;
+  font-size: 12px;
   margin-bottom: 15px;
 }

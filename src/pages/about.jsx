@@ -1,4 +1,5 @@
-import about from "./assets/vanWallpaperAbout.jpg";
+import about from "../assets/vanWallpaperAbout.jpg";
+import { Link } from "react-router-dom";
 export default function About() {
   return (
     <>
@@ -33,7 +34,9 @@ export default function About() {
           <h3>
             Your destination is waiting.<br></br>Your van is ready
           </h3>
-          <button>Explore our vans</button>
+          <Link to="/vans" className="link-button">
+            Explore our vans
+          </Link>
         </div>
       </div>
     </>
