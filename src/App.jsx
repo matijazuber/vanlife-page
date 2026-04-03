@@ -33,13 +33,10 @@ function App() {
             gap: "30px",
           }}
         >
-          <Link
-            style={{ color: "#4D4D4D", textDecoration: "none" }}
-            to="/about"
-          >
+          <Link className="about-header" to="/about">
             About
           </Link>
-          <Link style={{ color: "#4D4D4D", textDecoration: "none" }} to="/vans">
+          <Link className="vans-header" to="/vans">
             Vans
           </Link>
         </div>

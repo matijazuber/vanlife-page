@@ -10,7 +10,7 @@ export default function Footer() {
       }}
     >
       <Link
-        to="/about"
+        to="/"
         style={{
           color: "#aaaaaa",
           fontWeight: "500",

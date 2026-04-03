@@ -9,10 +9,8 @@ const Vans = () => {
       .then((data) => setVansData(data.vans));
   }, []);
 
-  console.log(vansData);
-
   const vanElements = vansData.map((van) => (
-    <div key={van.id}>
+    <div key={van.id} className="van-tile">
       <img src={van.imageUrl}></img>
       <div className="van-info">
         <h3>{van.name}</h3>
@@ -27,7 +25,7 @@ const Vans = () => {
 
   return (
     <>
-      <h1>Explore our Van options</h1>
+      <h1 className="explore">Explore our Van options</h1>
       <div>{vanElements}</div>
     </>
   );
