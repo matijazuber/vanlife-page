@@ -24,6 +24,7 @@ const VanInfo = () => {
               <span>/day</span>
             </p>
             <i className="van-description">{van.description}</i>
+            <br></br>
             <button className="link-button">Rent this van</button>
           </div>
         </div>
