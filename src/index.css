@@ -261,3 +261,8 @@ p {
 .van-info h3 {
   font-size: 32px;
 }
+
+.host-header {
+  color: #4d4d4d;
+  text-decoration: none;
+}
