@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import About from "./pages/about";
 import Home from "./pages/home";
-import Footer from "./footer";
 import Vans from "./pages/vans";
 import VanInfo from "./pages/vanInfo";
 import Layout from "./components/Layout";
@@ -27,7 +26,6 @@ function App() {
           </Route>
         </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
