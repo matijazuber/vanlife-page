@@ -266,3 +266,25 @@ p {
   color: #4d4d4d;
   text-decoration: none;
 }
+.host-header:hover {
+  text-decoration: underline;
+}
+
+.host-nav {
+  display: flex;
+}
+
+.host-nav a {
+  font-family: Inter;
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.host-nav a:hover {
+  transition: ease 0.3s;
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
+}
