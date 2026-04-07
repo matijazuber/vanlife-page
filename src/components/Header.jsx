@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
+  const activeStyle = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616",
+  };
   return (
     <>
       <header className="headerDiv">
@@ -18,7 +23,7 @@ const Header = () => {
         >
           #VANLIFE
         </Link>
-        <div
+        <nav
           style={{
             display: "flex",
             fontFamily: "Inter",
@@ -27,16 +32,28 @@ const Header = () => {
             gap: "30px",
           }}
         >
-          <Link className="host-header" to="/host">
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : null)}
+            className="host-header"
+            to="/host"
+          >
             Host
-          </Link>
-          <Link className="about-header" to="/about">
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : null)}
+            className="about-header"
+            to="/about"
+          >
             About
-          </Link>
-          <Link className="vans-header" to="/vans">
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : null)}
+            className="vans-header"
+            to="/vans"
+          >
             Vans
-          </Link>
-        </div>
+          </NavLink>
+        </nav>
       </header>
     </>
   );
