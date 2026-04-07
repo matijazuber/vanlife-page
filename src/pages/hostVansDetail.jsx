@@ -1,5 +1,11 @@
 const MyVansDetail = () => {
-  return <h1>Return</h1>;
+  return (
+    <>
+      <div>
+        <div></div>
+      </div>
+    </>
+  );
 };
 
 export default MyVansDetail;

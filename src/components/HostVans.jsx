@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const HostVans = () => {
   const [hostVans, setHostVans] = useState([]);
@@ -18,15 +19,20 @@ const HostVans = () => {
   const hostVanElements = hostVans.map((van) => {
     return (
       <>
-        <div className="hostVanDiv" key={van.id}>
-          <div>
-            <img src={van.imageUrl}></img>
-            <div className="vanPriceName">
-              <p>{van.name}</p>
-              <span>{`$${van.price}/day`}</span>
+        <Link
+          style={{ color: "#161616", textDecoration: "none" }}
+          to={`/host/vans/${van.id}`}
+        >
+          <div className="hostVanDiv" key={van.id}>
+            <div>
+              <img src={van.imageUrl}></img>
+              <div className="vanPriceName">
+                <p>{van.name}</p>
+                <span>{`$${van.price}/day`}</span>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </>
     );
   });
