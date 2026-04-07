@@ -273,6 +273,7 @@ p {
 
 .host-nav {
   display: flex;
+  margin-left: 5px;
 }
 
 .host-nav a {
@@ -288,4 +289,39 @@ p {
   color: #161616;
   text-decoration: underline;
   font-weight: 600;
+}
+
+.hostVanDiv {
+  width: 500px;
+  margin-left: 25px;
+}
+
+.hostVanDiv img {
+  width: 150px;
+}
+
+.hostVanDiv div {
+  display: flex;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: white;
+  margin-bottom: 30px;
+  align-items: flex-end;
+}
+
+.vanPriceName {
+  display: flex;
+  flex-direction: column;
+}
+
+.vanPriceName p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.vanPriceName span {
+  align-self: start;
+  font-family: Inter;
+  font-size: 14px;
+  margin: 0;
 }
