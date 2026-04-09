@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MyVansDetail = () => {
   const params = useParams();
@@ -17,6 +18,9 @@ const MyVansDetail = () => {
 
   return (
     <>
+      <Link to=".." relative="path" className="backButton">
+        &larr; <span>Back to all vans</span>
+      </Link>
       {van ? (
         <div className="divDetailsBack">
           <div className="vanDetailsDiv">

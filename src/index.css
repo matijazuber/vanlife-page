@@ -390,3 +390,15 @@ p {
   color: #ffffff;
   font-family: Inter, sans-serif;
 }
+
+.backButton {
+  display: inline-block;
+  margin: 20px 30px;
+  font-size: 13px;
+  font-family: Inter;
+  color: #201f1d;
+  text-decoration: none;
+}
+.backButton:hover {
+  text-decoration: underline;
+}
