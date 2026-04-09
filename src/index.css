@@ -325,3 +325,68 @@ p {
   font-size: 14px;
   margin: 0;
 }
+
+.divDetailsBack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff7ed;
+}
+
+.vanDetailsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffff;
+  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 500px;
+}
+
+.vanDetailsDiv div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.vanDetailsDiv div {
+  font-family: Inter;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.vanDetailsType.Simple.selected {
+  margin-top: 20px;
+  background-color: #e17654;
+  padding: 10px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+}
+
+.vanDetailsDiv .optionsVanDetail {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.vanDetailsType.Rugged.selected {
+  margin-top: 20px;
+  background-color: #115e59;
+  padding: 10px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+}
