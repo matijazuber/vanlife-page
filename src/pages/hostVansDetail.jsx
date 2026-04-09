@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import { Outlet } from "react-router-dom";
 const MyVansDetail = () => {
   const params = useParams();
   const [van, setVan] = useState();
@@ -36,11 +36,18 @@ const MyVansDetail = () => {
                 <span>/day</span>
               </p>
               <div className="optionsVanDetail">
-                <span>Details</span>
-                <span>Pricing</span>
-                <span>Photos</span>
+                <Link to=".">
+                  <span>Details</span>
+                </Link>
+                <Link to={`/host/vans/${params.id}/pricing`}>
+                  <span>Pricing</span>
+                </Link>
+                <Link to={`/host/vans/${params.id}/photos`}>
+                  <span>Photos</span>
+                </Link>
               </div>
             </div>
+            <Outlet></Outlet>
           </div>
         </div>
       ) : null}
