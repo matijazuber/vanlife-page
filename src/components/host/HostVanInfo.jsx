@@ -1,5 +1,11 @@
+import { useOutletContext } from "react-router-dom";
+
 const HostVanInfo = () => {
-  return <h1>Info Goes Here!</h1>;
+  return (
+    <>
+      <p></p>
+    </>
+  );
 };
 
 export default HostVanInfo;

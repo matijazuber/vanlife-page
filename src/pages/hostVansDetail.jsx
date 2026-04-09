@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 const MyVansDetail = () => {
+  const activeStyles = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616",
+  };
   const params = useParams();
   const [van, setVan] = useState();
 
@@ -24,30 +29,33 @@ const MyVansDetail = () => {
       {van ? (
         <div className="divDetailsBack">
           <div className="vanDetailsDiv">
-            <img src={van.imageUrl}></img>
             <div>
-              <i className={`vanDetailsType ${van.type} selected`}>
-                {van.type}
-              </i>
+              <h1>Your Listed Vans</h1>
+              <h3>Manage and view all your hosted vehicles.</h3>
 
-              <h3>{van.name}</h3>
-              <p>
-                ${van.price}
-                <span>/day</span>
-              </p>
               <div className="optionsVanDetail">
-                <Link to=".">
+                <NavLink
+                  end
+                  style={({ isActive }) => (isActive ? activeStyles : null)}
+                  to="."
+                >
                   <span>Details</span>
-                </Link>
-                <Link to={`/host/vans/${params.id}/pricing`}>
+                </NavLink>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyles : null)}
+                  to={`/host/vans/${params.id}/pricing`}
+                >
                   <span>Pricing</span>
-                </Link>
-                <Link to={`/host/vans/${params.id}/photos`}>
+                </NavLink>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyles : null)}
+                  to={`/host/vans/${params.id}/photos`}
+                >
                   <span>Photos</span>
-                </Link>
+                </NavLink>
               </div>
             </div>
-            <Outlet></Outlet>
+            <Outlet context={{ van }}></Outlet>
           </div>
         </div>
       ) : null}

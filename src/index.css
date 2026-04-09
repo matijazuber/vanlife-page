@@ -351,6 +351,7 @@ p {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
+  margin-bottom: 30px;
 }
 
 .vanDetailsDiv div {
@@ -377,6 +378,7 @@ p {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-bottom: 30px;
 }
 
 .vanDetailsType.Rugged.selected {
@@ -401,4 +403,11 @@ p {
 }
 .backButton:hover {
   text-decoration: underline;
+}
+.optionsVanDetail a {
+  font-family: Inter;
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 5px;
 }
