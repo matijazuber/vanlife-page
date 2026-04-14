@@ -1,16 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Vans = () => {
-  const [vansData, setVansData] = React.useState([]);
+  const [vansData, setVansData] = useState([]);
+  const [search, setSearch] = useSearchParams();
+  const typeFilter = search.get("type");
+  console.log(typeFilter);
 
-  React.useEffect(() => {
+  const displayedVans = typeFilter
+    ? vansData.filter((char) => char.type.toLowerCase() === typeFilter)
+    : vansData;
+
+  useEffect(() => {
     fetch("/api/vans")
       .then((res) => res.json())
       .then((data) => setVansData(data.vans));
   }, []);
 
-  const vanElements = vansData.map((van) => (
+  const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
       <Link
         style={{ color: "#161616", textDecoration: "none" }}
