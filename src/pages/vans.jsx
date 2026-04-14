@@ -39,6 +39,29 @@ const Vans = () => {
   return (
     <>
       <h1 className="explore">Explore our Van options</h1>
+      <div className="van-list-filter-buttons">
+        <button
+          onClick={() => setSearch({ type: "simple" })}
+          className="van-type-filter "
+        >
+          Simple
+        </button>
+        <button
+          onClick={() => setSearch({ type: "rugged" })}
+          className="van-type-filter "
+        >
+          Rugged
+        </button>
+        <button
+          onClick={() => setSearch({ type: "luxury" })}
+          className="van-type-filter "
+        >
+          Luxury
+        </button>
+        <button onClick={() => setSearch({})} className="van-type-filter">
+          Clear Filter
+        </button>
+      </div>
       <div>{vanElements}</div>
     </>
   );

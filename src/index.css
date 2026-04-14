@@ -411,3 +411,26 @@ p {
   font-weight: 500;
   padding: 5px 5px;
 }
+
+.van-list-filter-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.van-type-filter {
+  border: none;
+  background-color: #4d4d4d;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: Inter;
+  cursor: pointer;
+}
+
+.van-type-filter:hover {
+  background-color: #506665;
+  transition: 0.5s ease;
+}
