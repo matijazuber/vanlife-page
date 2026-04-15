@@ -5,7 +5,6 @@ const Vans = () => {
   const [vansData, setVansData] = useState([]);
   const [search, setSearch] = useSearchParams();
   const typeFilter = search.get("type");
-  console.log(typeFilter);
 
   const displayedVans = typeFilter
     ? vansData.filter((char) => char.type.toLowerCase() === typeFilter)
@@ -42,25 +41,39 @@ const Vans = () => {
       <div className="van-list-filter-buttons">
         <button
           onClick={() => setSearch({ type: "simple" })}
-          className="van-type-filter "
+          className={
+            typeFilter === "simple"
+              ? `van-type-filter selected`
+              : `van-type-filter`
+          }
         >
           Simple
         </button>
         <button
           onClick={() => setSearch({ type: "rugged" })}
-          className="van-type-filter "
+          className={
+            typeFilter === "rugged"
+              ? `van-type-filter selected`
+              : `van-type-filter`
+          }
         >
           Rugged
         </button>
         <button
           onClick={() => setSearch({ type: "luxury" })}
-          className="van-type-filter "
+          className={
+            typeFilter === "luxury"
+              ? `van-type-filter selected`
+              : `van-type-filter`
+          }
         >
           Luxury
         </button>
-        <button onClick={() => setSearch({})} className="van-type-filter">
-          Clear Filter
-        </button>
+        {typeFilter ? (
+          <button onClick={() => setSearch({})} className="van-type-filter">
+            Clear Filter
+          </button>
+        ) : null}
       </div>
       <div>{vanElements}</div>
     </>

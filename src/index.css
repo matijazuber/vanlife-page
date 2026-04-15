@@ -434,3 +434,7 @@ p {
   background-color: #506665;
   transition: 0.5s ease;
 }
+
+.van-type-filter.selected {
+  background-color: #506665;
+}
