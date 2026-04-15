@@ -14,6 +14,8 @@ const VanInfo = () => {
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
+  const type = location.state?.type || "all";
+
   return (
     <>
       <Link
@@ -21,7 +23,7 @@ const VanInfo = () => {
         relative="path"
         className="backButton"
       >
-        &larr; <span>Back to {location.state.type} vans</span>
+        &larr; <span>Back to {type} vans</span>
       </Link>
       {van ? (
         <div key={van.id} className="van-tile-info">
