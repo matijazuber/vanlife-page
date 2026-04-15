@@ -1,21 +1,33 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import getVans from "../../api";
 
 const Vans = () => {
   const [vansData, setVansData] = useState([]);
   const [search, setSearch] = useSearchParams();
   const typeFilter = search.get("type");
+  const [loading, setLoading] = useState(true);
 
   const displayedVans = typeFilter
     ? vansData.filter((char) => char.type.toLowerCase() === typeFilter)
     : vansData;
 
   useEffect(() => {
-    fetch("/api/vans")
-      .then((res) => res.json())
-      .then((data) => setVansData(data.vans));
-  }, []);
+    async function loadVans() {
+      try {
+        const vans = await getVans();
+        setVansData(vans);
+        setLoading(false);
+      } catch (err) {
+        console.error("Failed to fetch vans:", err);
+      }
+    }
 
+    loadVans();
+  }, []);
+  if (loading) {
+    return <h1>Loading....</h1>;
+  }
   const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
       <Link
