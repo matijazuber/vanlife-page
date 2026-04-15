@@ -14,12 +14,14 @@ import HostVansDetail from "./pages/hostVansDetail";
 import HostVanPricing from "./components/host/HostVanPricing";
 import HostVanPhotos from "./components/host/HostVanPhotos";
 import HostVanInfo from "./components/host/HostVanInfo";
+import PageNotFound from "./pages/404";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
