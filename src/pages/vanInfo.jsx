@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 const VanInfo = () => {
   const params = useParams();
+  const location = useLocation();
+  console.log(location);
   const [van, setVan] = useState();
 
   useEffect(() => {
@@ -14,8 +16,12 @@ const VanInfo = () => {
 
   return (
     <>
-      <Link to=".." relative="path" className="backButton">
-        &larr; <span>Back to all vans</span>
+      <Link
+        to={`../?${location.state?.searchParams || ""}`}
+        relative="path"
+        className="backButton"
+      >
+        &larr; <span>Back to {location.state.type} vans</span>
       </Link>
       {van ? (
         <div key={van.id} className="van-tile-info">

@@ -21,6 +21,7 @@ const Vans = () => {
       <Link
         style={{ color: "#161616", textDecoration: "none" }}
         to={`/vans/${van.id}`}
+        state={{ searchParams: search.toString(), type: typeFilter }}
       >
         <img src={van.imageUrl}></img>
         <div className="van-info">
