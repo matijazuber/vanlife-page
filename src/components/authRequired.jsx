@@ -4,7 +4,12 @@ const AuthRequired = () => {
   const authenticated = false;
 
   if (!authenticated) {
-    return <Navigate to="/login"></Navigate>;
+    return (
+      <Navigate
+        to="/login"
+        state={{ message: "You must log in first" }}
+      ></Navigate>
+    );
   }
   return <Outlet></Outlet>;
 };
