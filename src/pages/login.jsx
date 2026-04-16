@@ -1,18 +1,32 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { loginUser } from "../../api";
 
 const Login = () => {
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState(null);
+
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(loginFormData);
+    setStatus("submitting");
+    loginUser(loginFormData)
+      .then((data) => {
+        console.log(data);
+        setError(null);
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setStatus("idle");
+      });
   };
 
   const location = useLocation();
-  console.log(location);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,6 +45,9 @@ const Login = () => {
           </h3>
         ) : null}
         <h1>Sign in to your account</h1>
+        {error?.message && (
+          <h3 className="login-first">{location.state.message}</h3>
+        )}
         <form onSubmit={handleSubmit} className="login-form">
           <input
             name="email"
@@ -46,7 +63,9 @@ const Login = () => {
             placeholder="Password"
             value={loginFormData.password}
           ></input>
-          <button>Log In</button>
+          <button disabled={status === "submitting"}>
+            {status === "submitting" ? "Logging in..." : "Log in"}
+          </button>
         </form>
       </div>
     </>

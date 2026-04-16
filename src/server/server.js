@@ -1,8 +1,9 @@
-import { createServer, Model } from "miragejs";
+import { createServer, Model, Response } from "miragejs";
 
 createServer({
   models: {
     vans: Model,
+    users: Model,
   },
 
   seeds(server) {
