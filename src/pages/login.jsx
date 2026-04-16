@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { loginUser } from "../../api";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
 
@@ -15,7 +16,7 @@ const Login = () => {
     setStatus("submitting");
     loginUser(loginFormData)
       .then((data) => {
-        console.log(data);
+        navigate("/host");
         setError(null);
       })
       .catch((err) => {
