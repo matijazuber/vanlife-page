@@ -15,6 +15,7 @@ import HostVanPricing from "./components/host/HostVanPricing";
 import HostVanPhotos from "./components/host/HostVanPhotos";
 import HostVanInfo from "./components/host/HostVanInfo";
 import PageNotFound from "./pages/404";
+import Login from "./pages/login";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />}></Route>
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanInfo />} />
           <Route path="host" element={<HostLayout />}>

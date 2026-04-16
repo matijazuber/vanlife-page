@@ -1,4 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
+import loginIcon from "../assets/Icon.svg";
 
 const Header = () => {
   const activeStyle = {
@@ -52,6 +53,9 @@ const Header = () => {
             to="/vans"
           >
             Vans
+          </NavLink>
+          <NavLink to="/login">
+            <img src={loginIcon} style={{ width: "20px" }}></img>
           </NavLink>
         </nav>
       </header>
