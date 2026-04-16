@@ -16,6 +16,7 @@ import HostVanPhotos from "./components/host/HostVanPhotos";
 import HostVanInfo from "./components/host/HostVanInfo";
 import PageNotFound from "./pages/404";
 import Login from "./pages/login";
+import AuthRequired from "./components/authRequired";
 
 function App() {
   return (
@@ -28,21 +29,24 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanInfo />} />
-          <Route path="host" element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="income" element={<Income />} />
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="vans" element={<HostVans />} />
-            <Route path="vans/:id" element={<HostVansDetail />}>
-              <Route index element={<HostVanInfo></HostVanInfo>}></Route>
-              <Route
-                path="/host/vans/:id/pricing"
-                element={<HostVanPricing />}
-              ></Route>
-              <Route
-                path="/host/vans/:id/photos"
-                element={<HostVanPhotos />}
-              ></Route>
+
+          <Route element={<AuthRequired></AuthRequired>}>
+            <Route path="host" element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path="reviews" element={<Reviews />} />
+              <Route path="vans" element={<HostVans />} />
+              <Route path="vans/:id" element={<HostVansDetail />}>
+                <Route index element={<HostVanInfo></HostVanInfo>}></Route>
+                <Route
+                  path="/host/vans/:id/pricing"
+                  element={<HostVanPricing />}
+                ></Route>
+                <Route
+                  path="/host/vans/:id/photos"
+                  element={<HostVanPhotos />}
+                ></Route>
+              </Route>
             </Route>
           </Route>
         </Route>
