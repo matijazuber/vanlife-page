@@ -7,6 +7,8 @@ const Login = () => {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
 
+  const location = useLocation();
+
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
@@ -16,8 +18,11 @@ const Login = () => {
     setStatus("submitting");
     loginUser(loginFormData)
       .then((data) => {
-        navigate("/host");
         setError(null);
+        localStorage.setItem("loggedin", true);
+        navigate(`${location.state ? location.state.path : `/host`}`, {
+          replace: true,
+        });
       })
       .catch((err) => {
         setError(err);
@@ -26,8 +31,6 @@ const Login = () => {
         setStatus("idle");
       });
   };
-
-  const location = useLocation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;

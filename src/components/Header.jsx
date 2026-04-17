@@ -2,6 +2,9 @@ import { NavLink, Link } from "react-router-dom";
 import loginIcon from "../assets/Icon.svg";
 
 const Header = () => {
+  const logout = () => {
+    localStorage.removeItem("loggedin");
+  };
   const activeStyle = {
     fontWeight: "bold",
     textDecoration: "underline",
@@ -57,6 +60,7 @@ const Header = () => {
           <NavLink to="/login">
             <img src={loginIcon} style={{ width: "20px" }}></img>
           </NavLink>
+          <button onClick={logout}>X</button>
         </nav>
       </header>
     </>
