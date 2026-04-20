@@ -1,6 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore/lite";
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDocs,
+  getDoc,
+} from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -14,12 +20,29 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const vansCollectionRef = collection(db, "vans");
 
 const getVans = async () => {
-  const response = await fetch("/api/vans");
-  const data = await response.json();
-  return data.vans;
+  const snapshot = await getDocs(vansCollectionRef);
+  const vans = snapshot.docs.map((doc) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
+  return vans;
 };
+
+export default getVans;
+
+export async function getVan(id) {
+  const docRef = doc(db, "vans", id);
+  const snapshot = await getDoc(docRef);
+  return {
+    ...snapshot.data(),
+    id: snapshot.id,
+  };
+}
 
 export async function loginUser(creds) {
   const res = await fetch("/api/login", {
@@ -38,5 +61,3 @@ export async function loginUser(creds) {
 
   return data;
 }
-
-export default getVans;
